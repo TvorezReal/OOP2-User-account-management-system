@@ -52,6 +52,8 @@ class Admin(User):
             print(f"Пользователь {user.get_name()} успешно добавлен.")
         else:
             print("Этот пользователь уже существует.")
+        for i in users_list:
+            print(i)
 
     # Метод для удаления пользователя
     def remove_user(self, users_list, user):
@@ -78,12 +80,6 @@ admin_1 = Admin("001", "Вася")
 admin_1.add_user(users_list, user_1)
 admin_1.add_user(users_list, user_2)
 
-# Вывод списка пользователей
-for i in users_list:
-    print(i)
-
-print(user_1, user_2)
-print(admin_1)
 # Админ удаляет пользователя из системы
 admin_1.remove_user(users_list, user_2)
 
@@ -94,3 +90,6 @@ admin_1.remove_user(users_list, user_2)
 
 # Использование методов для доступа к данным
 print(user_1.get_user_id())  # Корректно выводит ID пользователя
+print(user_1.get_name())  # Корректно выводит имя пользователя
+print(user_1.get_access_level())  # Корректно выводит уровень доступа
+print(admin_1.get_access_level())  # Корректно выводит уровень доступа
